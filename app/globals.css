@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --bg-muted: #f3f4f6;
+    --text: #111827;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+  }
+
+  .dark {
+    --bg: #0d0d0d;
+    --bg-muted: #1a1a1a;
+    --text: #e5e7eb;
+    --text-muted: #9ca3af;
+    --border: #374151;
+  }
+
+  body {
+    @apply bg-gray-50 dark:bg-carbon-900 text-gray-900 dark:text-steel-200 antialiased;
+  }
+}
+
+/* Light mode overrides for components that use dark-only colors */
+@media (prefers-color-scheme: light) {
+  html:not(.dark) body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
