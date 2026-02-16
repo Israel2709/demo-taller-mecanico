@@ -67,8 +67,6 @@ export function CotizarForm() {
     },
   });
 
-  const formData = watch();
-
   const onSubmit = (data: FormData) => {
     localStorage.setItem(COTIZAR_STORAGE_KEY, JSON.stringify(data));
     setDatosEnviados(data);
